@@ -1,0 +1,28 @@
+{
+    "name": "LinkedInJobIgnorer",
+    "description": "Hides companies that are placed in the list to make filtering easier",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": [
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.linkedin.com/jobs/search/*",
+        "https://www.linkedin.com/jobs/collections/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.linkedin.com/jobs/search/*",
+                "https://www.linkedin.com/jobs/collections/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
